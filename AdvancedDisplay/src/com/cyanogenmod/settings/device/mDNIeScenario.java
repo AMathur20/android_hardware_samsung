@@ -25,7 +25,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceManager;
 import android.util.AttributeSet;
 
-import org.cyanogenmod.internal.util.FileUtils;
+import android.os.FileUtils;
 
 public class mDNIeScenario extends ListPreference implements OnPreferenceChangeListener {
 
@@ -48,11 +48,11 @@ public class mDNIeScenario extends ListPreference implements OnPreferenceChangeL
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        FileUtils.writeLine(FILE, sharedPrefs.getString(Constants.KEY_MDNIE_SCENARIO, "0"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DisplaySettings.KEY_MDNIE_SCENARIO, "0"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        FileUtils.writeLine(FILE, (String) newValue);
+        Utils.writeValue(FILE, (String) newValue);
         return true;
     }
 }
