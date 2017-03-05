@@ -16,7 +16,7 @@
 
 package org.cyanogenmod.hardware;
 
-import import org.slim.utils.FileUtils;
+import org.slim.utils.FileUtils;
 
 public class VibratorHW {
 
